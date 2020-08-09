@@ -67,6 +67,8 @@ public class SwitchCase {
                         continue;
                 }
                 }
+            else
+                continue;
         } while(ch == 'y' || ch == 'Y');
     }
 }
