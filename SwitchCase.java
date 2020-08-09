@@ -45,8 +45,14 @@ public class SwitchCase {
                 prtf("\n\t Would you like to try the other options too? Y/N: ");
                 System.out.flush();
                 ch = sc.next().charAt(0);
-                if(ch!='y' || ch!='Y' || ch!='n' || ch!='N')
-                    prtf("I don't understand you! (-_-) I quit!");
+                switch(ch){
+                    case 'Y':
+                    case 'y':
+                    case 'n':
+                    case 'N': break;
+                    default : prtf("I don't understand you! (-_-) I quit!");
+                              continue;
+                }
                 }
             else if (choice == 4)
                 {
