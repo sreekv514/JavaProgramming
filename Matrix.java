@@ -1,10 +1,10 @@
-/* Program to find sum of elements of 2 matrices
+/* Program to find sum and product of elements of 2 matrices
  * @author Vandana
  */
 
 import java.util.Scanner;
         
-public class MatrixSum {
+public class Matrix {
 
 static int[][] addArrays (int[][] a, int[][] b, int row, int col) { 
     // Method to add two matrices and return the sum as a matrix
@@ -15,6 +15,17 @@ static int[][] addArrays (int[][] a, int[][] b, int row, int col) {
         }
     }
     return sum;
+}
+
+static int[][] multiplyArrays (int[][]a, int[][] b, int row, int col) {
+    // Method to multiply 2matrices and return the product as a matrix
+    int prod[][] = new int[row][col];
+    for (int i = 0; i < row; i++) {
+        for (int j = 0; j < col; j++) {
+            prod[i][j] = a[i][j] * b[i][j];
+        }
+    }
+    return prod;
 }
 
 public static void prtf (String str) {
@@ -55,8 +66,9 @@ public static void main (String[] args) {
         }
     }
       
-    // Call method to calculate and return sum[][]
+    // Call method to calculate and return sum[][] & prod[][]
     int sum[][] = addArrays (a, b, row, col);
+    int prod[][] = multiplyArrays (a, b, row, col);
     
     // Display matrix A to user
     prtf("\n\t Matrix A: \n\t ");
@@ -81,6 +93,15 @@ public static void main (String[] args) {
     for(i = 0; i < row; i ++) {
         for(j = 0; j < col; j++) {
              prtf(sum[i][j] + " ");
+        }
+        prtf("\n\t ");
+    }
+    
+    // Display product of both matrices
+    prtf("\n\t Product of matrices A & B:\n\t ");
+    for(i = 0; i < row; i ++) {
+        for(j = 0; j < col; j++) {
+             prtf(prod[i][j] + " ");
         }
         prtf("\n\t ");
     }
